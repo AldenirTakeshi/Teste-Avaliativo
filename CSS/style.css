@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #22181c;
+}
+.imgDiv {
+  display: flex;
+  align-items: center;
+}
+.imgDiv h2 {
+  color: #459c92;
+  cursor: pointer;
+}
+.logoConversor {
+  cursor: pointer;
+  width: 100px;
+  color: white;
+}
+
+.btnHeader {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #459c92;
+}
+
+.h1Conversor {
+  color: white;
+  width: 900px;
+  font-size: 60px;
+  padding-top: 5px;
+  text-align: center;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+  background-color: gray;
+  height: 100vh;
+}
+.Divisor {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 500px;
+  justify-content: center;
+  gap: 10px;
+}
+input {
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+}
+.btnConversor {
+  height: 50px;
+}
+
+footer {
+  background-color: #22181c;
+  height: 100px;
+}
