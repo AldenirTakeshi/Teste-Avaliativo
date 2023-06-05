@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor de Números Romanos</title>
+    <link rel="shortcut icon" href="../imgs/coin.png" type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -30,9 +31,15 @@
       </div>
 
       <div class="divBtns">
-        <button type="button" class="btnHeader">Conversor</button>
-        <button type="button" class="btnHeader">Jogo da Vida</button>
-        <button type="button" class="btnHeader">Divisor</button>
+        <a href="./index.html">
+          <button type="button" class="btnHeader">Conversor</button></a
+        >
+        <a href="../JogoDaVida/jogo.html"
+          ><button type="button" class="btnHeader">Jogo da Vida</button></a
+        >
+        <a href="../Divisor/Divisor.html"
+          ><button type="button" class="btnHeader">Divisor</button></a
+        >
       </div>
     </header>
     <section class="section">
@@ -40,20 +47,74 @@
       <hr />
       <div class="Divisor">
         <div class="result1">
-          <input class="input input1" type="input1" placeholder="Romano" />
-          <input class="input input2" type="input2" placeholder="Decimal" />
-          <button type="button" class="btnConversor">Converter</button>
+          <input
+            class="input input1"
+            oninput="toUpperCase(event)"
+            id="inputRomano"
+            type="input1"
+            placeholder="Romano"
+          />
+          <input
+            class="input input2"
+            oninput="toUpperCase(event)"
+            id="inputArabico"
+            type="input2"
+            placeholder="Decimal"
+          />
+          <button
+            type="button"
+            class="btnConversor"
+            onclick="converterRomanoParaArabico()"
+          >
+            Converter
+          </button>
         </div>
+
         <br />
+
         <div class="result2">
-          <input class="input input1.1" type="input1" placeholder="Decimal" />
-          <input class="input input2.2" type="input2" placeholder="Romano" />
-          <button type="button" class="btnConversor">Converter</button>
+          <input
+            class="input input1.1"
+            type="input1"
+            id="inputArabico2"
+            placeholder="Decimal"
+          />
+          <input
+            class="input input2.2"
+            type="input2"
+            id="inputRomano2"
+            placeholder="Romano"
+          />
+          <button
+            type="button"
+            onclick="converterArabicoParaRomano()"
+            class="btnConversor"
+          >
+            Converter
+          </button>
         </div>
       </div>
     </section>
     <footer>
+      <div class="divIconsSocial">
+        <a href="https://github.com/AldenirTakeshi" target="_blank"
+          ><img class="iconSocial" src="../imgs/github.png" alt=""
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/aldenir-dos-santos-5b493913b/"
+          target="_blank"
+          ><img class="iconSocial" src="../imgs/linkedin.png" alt=""
+        /></a>
+        <a href="https://www.instagram.com/takeshi.js/" target="_blank"
+          ><img class="iconSocial" src="../imgs/instagram.png" alt=""
+        /></a>
+        <a href="https://twitter.com/Takeshito_" target="_blank"
+          ><img class="iconSocial" src="../imgs/twitter.png" alt=""
+        /></a>
+      </div>
       <h3>Desenvolvido por <span>Aldenir dos Santos</span></h3>
     </footer>
+
+    <script src="../JavaScript/script.js"></script>
   </body>
 </html>
