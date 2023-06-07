@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Divisor de Conta</title>
+    <script>
+      function calcularDivisao() {
+        var clientesInput = document.getElementById("clientes").value.trim();
+        var produtosInput = document.getElementById("produtos").value.trim();
+        var totalInput = document.getElementById("total").value.trim();
+
+        if (clientesInput === "" || produtosInput === "" || totalInput === "") {
+          alert("Por favor, preencha todos os campos.");
+          return;
+        }
+
+        var clientes = clientesInput.split(",");
+        var produtos = produtosInput.split(";");
+        var total = parseFloat(totalInput);
+
+        var valorPorCliente = total / clientes.length;
+        var resultado = "";
+
+        for (var i = 0; i < clientes.length; i++) {
+          var cliente = clientes[i].trim();
+          var consumo = 0;
+
+          for (var j = 0; j < produtos.length; j++) {
+            var produtoCliente = produtos[j].split(":");
+            var produto = produtoCliente[0].trim();
+            var clientesProduto = produtoCliente[1].split(",").map(function (x) {
+              return x.trim();
+            });
+
+            if (clientesProduto.indexOf(cliente) !== -1) {
+              consumo += 1;
+            }
+          }
+
+          var valorComServico = valorPorCliente * (1 + 0.1 * consumo);
+          resultado += cliente + ": R$ " + valorComServico.toFixed(2) + "<br>";
+        }
+
+        document.getElementById("resultado").innerHTML = resultado;
+      }
+    </script>
   </head>
   <body>
-    <h1>Divisor</h1>
+    <h1>Divisor de Conta</h1>
+
+    <label for="clientes">Clientes:</label>
+    <input type="text" id="clientes" placeholder="João, Maria, Pedro" /><br />
+
+    <label for="produtos">Produtos:</label>
+    <input
+      type="text"
+      id="produtos"
+      placeholder="Pizza: João, Maria, Pedro; Refrigerante: João, Pedro; Suco: Maria"
+    /><br />
+
+    <label for="total">Total:</label>
+    <input type="number" id="total" step="0.01" placeholder="Total da conta" /><br />
+
+    <button onclick="calcularDivisao()">Calcular</button>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
   </body>
 </html>
